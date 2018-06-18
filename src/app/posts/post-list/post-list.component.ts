@@ -1,4 +1,5 @@
 import { Component, Input } from "@angular/core";
+import { Post } from '../post.model';
 
 @Component({
     selector: "app-post-list",
@@ -15,5 +16,5 @@ export class PostListComponent {
     //];
 
     // Makes posts bindable from parent component.
-    @Input() posts = [];
+    @Input() posts: Post[] = [];
 }

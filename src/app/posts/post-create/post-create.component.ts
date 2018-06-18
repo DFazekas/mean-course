@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from "@angular/core";
+import { Post } from '../post.model';
 
 // By adding a TS Decorator to our TS class, Angular uses it as a Component.
 // The Component Decorator takes some configuration in the form of a JS object.
@@ -16,10 +17,10 @@ export class PostCreateComponent {
     enteredTitle = "";
     enteredContent = "";
     // An event that be listened to by parent component.
-    @Output() postCreated = new EventEmitter();
+    @Output() postCreated = new EventEmitter<Post>();
 
     onAddPost() {
-        const post = {
+        const post: Post = {
             title: this.enteredTitle,
             content: this.enteredContent
         };
