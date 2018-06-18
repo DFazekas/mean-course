@@ -6,10 +6,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule } from '@angular/material';
+import { 
+  MatInputModule, 
+  MatCardModule, 
+  MatButtonModule, 
+  MatToolbarModule,
+  MatExpansionModule 
+} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { PostCreateComponent } from './posts/post-create/post-create.component';
+import { PostListComponent } from './posts/post-list/post-list.component';
 import { HeaderComponent } from './header/header.component';
 
 
@@ -20,7 +27,8 @@ import { HeaderComponent } from './header/header.component';
   declarations: [
     AppComponent,
     PostCreateComponent,
-    HeaderComponent
+    HeaderComponent,
+    PostListComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +37,8 @@ import { HeaderComponent } from './header/header.component';
     MatInputModule,  // Unlocks all the Angular Material input components.
     MatCardModule,  // Material Cards.
     MatButtonModule, // Material Buttons.
-    MatToolbarModule  // Material Toolbar.    
+    MatToolbarModule,  // Material Toolbar.
+    MatExpansionModule // Collapsable panel.    
   ],
   providers: [],
   /* Adding the component here allows using it within the index.html file. */
