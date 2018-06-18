@@ -1,5 +1,14 @@
 <app-header></app-header>
 <main>
-    <app-post-create></app-post-create>
-    <app-post-list></app-post-list>
+    <!-- Listening to postCreated event, 
+        we're adding the post in onPostAdded to our
+        storedPosts list, and we're passing down that list
+        to postList. 
+        
+        Angular's change detection will automatically
+        detect when a new post is created and when it needs to render
+        that new post.
+    -->
+    <app-post-create (postCreated)="onPostAdded($event)"></app-post-create>
+    <app-post-list [posts]="storedPosts"></app-post-list>
 </main>
