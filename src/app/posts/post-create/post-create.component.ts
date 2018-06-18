@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from "@angular/core";
 import { Post } from '../post.model';
+import { NgForm } from "@angular/forms";
 
 // By adding a TS Decorator to our TS class, Angular uses it as a Component.
 // The Component Decorator takes some configuration in the form of a JS object.
@@ -19,10 +20,15 @@ export class PostCreateComponent {
     // An event that be listened to by parent component.
     @Output() postCreated = new EventEmitter<Post>();
 
-    onAddPost() {
+    onAddPost(form: NgForm) {
+        // If form is valid, create new post.
+        if (form.invalid) {
+            return;
+        }
+        
         const post: Post = {
-            title: this.enteredTitle,
-            content: this.enteredContent
+            title: form.value.title,
+            content: form.value.content
         };
         // Emit our newly created Post for the post-list 
         // component to receive.
