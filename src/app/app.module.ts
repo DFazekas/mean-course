@@ -6,10 +6,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatInputModule, MatCardModule, MatButtonModule } from '@angular/material';
+import { MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { PostCreateComponent } from './posts/post-create/post-create.component';
+import { HeaderComponent } from './posts/header/header.component';
 
 
 @NgModule({
@@ -18,15 +19,17 @@ import { PostCreateComponent } from './posts/post-create/post-create.component';
     * Not in the index.html file. */
   declarations: [
     AppComponent,
-    PostCreateComponent
+    PostCreateComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
     MatInputModule,  // Unlocks all the Angular Material input components.
-    MatCardModule,
-    MatButtonModule   
+    MatCardModule,  // Material Cards.
+    MatButtonModule, // Material Buttons.
+    MatToolbarModule  // Material Toolbar.    
   ],
   providers: [],
   /* Adding the component here allows using it within the index.html file. */
